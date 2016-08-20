@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000">
+
+
+    <SurfaceView
+        android:id="@+id/surfaceview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:orientation="horizontal"
+        android:visibility="invisible">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center"
+            android:src="@drawable/point" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="4dp"
+            android:text="00:00"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:visibility="visible" />
+    </LinearLayout>
+    <!--<Chronometer
+        android:id="@+id/chronometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:format="%s"
+        android:textColor="#00FF00"
+        android:textSize="80px" />-->
+
+
+    <RelativeLayout
+        android:background="#1000"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:layout_centerVertical="true"
+            android:id="@+id/bt_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/selector_record_back" />
+
+        <RelativeLayout
+            android:layout_centerVertical="true"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/record_bg"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/start_record"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:background="@drawable/record" />
+        </RelativeLayout>
+
+        <Button
+            android:visibility="gone"
+            android:layout_centerVertical="true"
+            android:id="@+id/bt_next"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/selector_record_ok" />
+    </RelativeLayout>
+</RelativeLayout>
