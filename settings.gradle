@@ -1,1 +1,1 @@
-include ':app'
+include ':app', ':videorecordwithoutpreview', ':video_record_without_preview'

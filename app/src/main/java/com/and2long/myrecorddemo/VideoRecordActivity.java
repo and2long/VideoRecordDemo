@@ -169,10 +169,6 @@ public class VideoRecordActivity extends Activity implements OnClickListener, Su
         vid_name = Utils.getStringDate() + ".mp4";
         currentVideoFilePath = getSDPath(VideoRecordActivity.this) + vid_name;
         videoList.add(currentVideoFilePath);
-        /*file = new File(currentVideoFilePath);
-        if (file.exists()) {
-            // 如果文件存在，删除它，演示代码保证设备上只有一个录音文件            file.delete();
-        }*/
         camera.stopPreview();
         camera.unlock();
 
@@ -182,7 +178,7 @@ public class VideoRecordActivity extends Activity implements OnClickListener, Su
             // 设置录制视频源为Camera(相机)
             mediarecorder.setVideoSource(MediaRecorder.VideoSource.DEFAULT);
             mediarecorder.setAudioSource(MediaRecorder.AudioSource.DEFAULT);
-//        // 录像旋转90度
+            // 录像旋转90度
             mediarecorder.setOrientationHint(displayOrientation);
             // mediaRecorder.setVideoSource(VideoSource.CAMERA);
             // 设置录制完成后视频的封装格式THREE_GPP为3gp.MPEG_4为mp4
@@ -201,6 +197,7 @@ public class VideoRecordActivity extends Activity implements OnClickListener, Su
 
             mediarecorder.setPreviewDisplay(mSurfaceView.getHolder().getSurface());
             // 设置视频文件输出的路径
+            mediarecorder.setOutputFile(currentVideoFilePath);
             mediarecorder.setOnErrorListener(new OnErrorListener() {
 
                 @Override
@@ -214,7 +211,6 @@ public class VideoRecordActivity extends Activity implements OnClickListener, Su
                 }
             });
         }
-        mediarecorder.setOutputFile(currentVideoFilePath);
         try {
             // 准备、开始
             mediarecorder.prepare();
